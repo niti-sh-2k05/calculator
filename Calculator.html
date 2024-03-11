@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator">
+    <table border="2">
+        <tr>
+            <td colspan="3"><input class="display-box" type="text" id="dis" disabled></td>
+            <td><input type="button" value="C" id="btn" onclick="clrscreen()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="bns" value="1" onclick="display('1')"></td>
+            <td><input type="button" class="bns" value="2" onclick="display('2')"></td>
+            <td><input type="button" class="bns" value="3" onclick="display('3')"></td>
+            <td><input type="button" class="bns" value="/" onclick="display('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="bns" value="4" onclick="display('4')"></td>
+            <td><input type="button" class="bns" value="5" onclick="display('5')"></td>
+            <td><input type="button" class="bns" value="6" onclick="display('6')"></td>
+            <td><input type="button" class="bns" value="-" onclick="display('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="bns" value="7" onclick="display('7')"></td>
+            <td><input type="button" class="bns" value="8" onclick="display('8')"></td>
+            <td><input type="button" class="bns" value="9" onclick="display('9')"></td>
+            <td><input type="button" class="bns" value="+" onclick="display('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="bns" value="." onclick="display('.')"></td>
+            <td><input type="button" class="bns" value="0" onclick="display('0')"></td>
+            <td><input type="button" class="bns" value="*" onclick="display('*')"></td>
+            <td><input type="button" class="bns" value="=" onclick="evall()" id="btn1"></td>
+
+        </tr>
+        
+    </table></div>
+    <script>
+        function clrscreen(){
+            document.getElementById('dis').value="";
+        }
+        function display(value){
+            document.getElementById('dis').value+=value;
+        }
+        function evall(){
+    var n = document.getElementById("dis").value;
+    try {
+        var result = eval(n);
+        document.getElementById("dis").value = result;
+    } catch (error) {
+        document.getElementById("dis").value = "Error";
+    }
+}
+    </script>
+</body>
+
+</html>
